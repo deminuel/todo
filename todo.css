@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+   
+}
+
+.delete-btn {
+    background-color: red;
+    height: 25px;
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 20px;
+    text-align: center;
+    padding-top: 3px;
+
+   
+}
+
+#todoList {
+    
+    list-style: none
+}
+
+li {
+    display: flex;
+    justify-content: space-between;  
+} 
+    
+#container {
+    width: 300px; 
+    border: 1px solid black;
+    box-shadow: 0px, 5px, 8px black; 
+    
+        
+}
+#todoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
