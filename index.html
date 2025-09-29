@@ -31,7 +31,7 @@
 
         $("#todoContainer").on("submit", function(e){
     e.preventDefault();
-    let task =$("#todoInput").value;
+    let task =$("#todoInput").val();
     if (task === "") return;
         let $li = $("<li></li>");
              $("#todoList").append($li);
