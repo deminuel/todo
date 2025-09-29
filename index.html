@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="todo.css">
 </head>
 <body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
     <div id="container">
     <form id="todoContainer">
@@ -22,14 +24,46 @@
     
 
     <script>
-        (function(e) {
-           e.preventDefault();
-        
-        $("#todoInput").add (function() {
-            $("todoList").append();
-        })
+    // $(document).ready(function (){
+    //     const $todoform = $("todoContainer");
+    //     const $todoInput = $("todoInput");
+    //     const $todolist = $("todoList");
 
-        })
+        $("#todoContainer").on("submit", function(e){
+    e.preventDefault();
+    let task =$("#todoInput").value;
+    if (task === "") return;
+        let $li = $("<li></li>");
+             $("#todoList").append($li);
+            // $todoItem.text($todoText);
+            // $todoItem.append('<button class="delete-btn">Delete</button>');
+            //  $todoItem.append('<button class="complete-btn">Delete</button>');
+            //  $todolist.append($todoItem);
+            //  $todoInput.value('');
+
+            let $span = $("<span></span>").text(task);
+            $li.append($span);
+            $span.on("click", function() {
+                $li.toggleClass("completed");
+            });
+            let $deleteBtn = $("<button class='delete-btn'>X</button>");
+            $li.append($deleteBtn);
+            $deleteBtn.on("click", function () {
+                $li.remove();
+            });
+
+            $("#todoInput").val("");
+    });
+    
+    //     $todolist.on("click", '.delete-btn', function() {
+    //         $(this).parent().remove();
+    //     });
+    //     $todolist.on('click', '.complete-btn', function()
+    // {
+    //     $(this).parent().toggleClass('completed');
+    // });
+   
+       
     </script>
     
     <!-- <script src="todo.js"></script> -->

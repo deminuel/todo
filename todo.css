@@ -22,10 +22,15 @@ body {
     
     list-style: none
 }
+ul {
+    color: black;
+}
 
 li {
+    color: black;
     display: flex;
     justify-content: space-between;  
+    
 } 
     
 #container {
